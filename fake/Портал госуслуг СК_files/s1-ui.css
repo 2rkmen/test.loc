@@ -1,0 +1,315 @@
+/* s1-ui ver.0.1.02013-11-21 */
+
+.if-animation {
+}
+
+.if-animation.ng-enter, .if-animation.ng-leave {
+    -webkit-transition: all cubic-bezier(0.25, .46, .45, .94) .5s;
+    -moz-transition: all cubic-bezier(0.25, .46, .45, .94) .5s;
+    -o-transition: all cubic-bezier(0.25, .46, .45, .94) .5s;
+    transition: all cubic-bezier(0.25, .46, .45, .94) .5s
+}
+
+.if-animation.ng-enter, .if-animation.ng-leave.ng-leave-active {
+    opacity: 0
+}
+
+.if-animation.ng-enter.ng-enter-active, .if-animation.ng-leave {
+    opacity: 1
+}
+
+div.s1-diagram {
+    margin: 20px 20px 20px 70px
+}
+
+input.time-input {
+    display: inline-block;
+    width: 70px
+}
+
+input.time-input-second {
+    width: 85px
+}
+
+textarea {
+    max-width: 100%
+}
+
+textarea.autosize-transition {
+    transition: height .2s;
+    -webkit-transition: height .2s;
+    -moz-transition: height .2s
+}
+
+ol.linenums {
+    padding: 0
+}
+
+button.schema-editor-list-add {
+    margin: 0 0 10px
+}
+
+li.schema-editor-list-element {
+    list-style: none;
+    position: relative;
+    padding: 5px 5px 5px 60px
+}
+
+div.schema-editor-selected {
+    background: #428bca;
+    border-color: #428bca;
+    color: #fff
+}
+
+div.schema-editor-selected a {
+    color: #fff
+}
+
+li.schema-editor-list-element .schema-editor-list-element-controls {
+    position: absolute;
+    top: 7px;
+    left: 5px
+}
+
+li.schema-editor-list-element .schema-editor-list-element-controls button {
+    padding: 1px
+}
+
+div.schema-editor-node:hover {
+    border-color: #eee
+}
+
+div.schema-editor-node {
+    padding: 1px 2px 1px 5px;
+    cursor: pointer;
+    min-height: 22px;
+    border: solid 1px transparent;
+    border-radius: 4px
+}
+
+div.schema-editor-node-wrapper div.node-children {
+    margin: 5px
+}
+
+div.schema-editor-node-wrapper div.node-children ul {
+    margin: 0;
+    padding: 0
+}
+
+ol.schema-editor-variants {
+}
+
+ol.schema-editor-variants > li {
+    position: relative
+}
+
+ol.schema-editor-variants > li div.variant-controls {
+    position: absolute;
+    top: 8px;
+    right: 5px
+}
+
+ol.schema-editor-variants > li div.variant-value {
+    padding: 3px 90px 3px 0;
+    width: 100%;
+    display: inline-block
+}
+
+.schema-form-error {
+    color: red;
+    font-size: 10px
+}
+
+.schema-form-description {
+    color: #888;
+    font-size: 11px
+}
+
+li.schema-form-map-entry {
+    list-style: none;
+    position: relative
+}
+
+li.schema-form-map-entry > div {
+    padding: 5px
+}
+
+li.schema-form-map-entry ul {
+    margin: 0;
+    padding: 0
+}
+
+.schema-form-type-label {
+    font-weight: 700;
+    color: #888;
+    margin: 5px 0
+}
+
+li.schema-form-map-entry .schema-form-map-entry-delimiter {
+    border-bottom: solid 1px #eee;
+    height: 1px
+}
+
+button.schema-form-list-add {
+    margin: 0 0 10px
+}
+
+li.schema-form-list-element {
+    list-style: none;
+    position: relative;
+    padding: 5px 5px 5px 120px
+}
+
+li.schema-form-list-element .schema-form-list-element-delimiter {
+    border-bottom: solid 1px #eee;
+    height: 1px
+}
+
+li.schema-form-list-element .schema-form-list-element-controls {
+    position: absolute;
+    top: 7px;
+    left: 5px
+}
+
+.schema-form-readonly-value {
+    padding-top: 7px;
+    margin: 0
+}
+
+.search-node ul {
+    padding: 0;
+    margin: 0
+}
+
+button.search-list-add {
+    margin: 0 0 10px
+}
+
+li.search-list-element {
+    list-style: none;
+    position: relative;
+    padding: 5px 5px 5px 60px
+}
+
+li.search-list-element .search-list-element-controls {
+    position: absolute;
+    top: 7px;
+    left: 5px
+}
+
+li.search-list-element .search-list-element-controls button {
+    padding: 1px
+}
+
+.search-node-inactive {
+    opacity: .5
+}
+
+.search-node select {
+    vertical-align: top
+}
+
+select.search-group-operation {
+    display: inline-block;
+    width: auto
+}
+
+.tabbable {
+    overflow: hidden;
+    display: inline-block;
+    display: block
+}
+
+.tab-content {
+    /*overflow: auto*/
+}
+
+.tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs {
+    border-bottom: 0
+}
+
+.tab-content > .tab-pane, .pill-content > .pill-pane {
+    display: none
+}
+
+.tab-content > .active, .pill-content > .active {
+    display: block
+}
+
+.tabs-below > .nav-tabs {
+    border-top: 1px solid #ddd
+}
+
+.tabs-below > .nav-tabs > li {
+    margin-top: -1px;
+    margin-bottom: 0
+}
+
+.tabs-below > .nav-tabs > li > a {
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px
+}
+
+.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
+    border-top-color: #ddd;
+    border-bottom-color: transparent
+}
+
+.tabs-below > .nav-tabs > .active > a, .tabs-below > .nav-tabs > .active > a:hover, .tabs-below > .nav-tabs > .active > a:focus {
+    border-color: transparent #ddd #ddd
+}
+
+.tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li {
+    float: none
+}
+
+.tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
+    min-width: 74px;
+    margin-right: 0;
+    margin-bottom: 3px
+}
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 19px;
+    border-right: 1px solid #ddd
+}
+
+.tabs-left > .nav-tabs > li > a {
+    margin-right: -1px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px
+}
+
+.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+    border-color: #eee #ddd #eee #eee
+}
+
+.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+    border-color: #ddd transparent #ddd #ddd;
+    *border-right-color: #fff
+}
+
+.tabs-right > .nav-tabs {
+    float: right;
+    margin-left: 19px;
+    border-left: 1px solid #ddd
+}
+
+.tabs-right > .nav-tabs > li > a {
+    margin-left: -1px;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0
+}
+
+.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
+    border-color: #eee #eee #eee #ddd
+}
+
+.tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
+    border-color: #ddd #ddd #ddd transparent;
+    *border-left-color: #fff
+}
