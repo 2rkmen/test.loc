@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue title</title>
+</head>
+<body>
+
+<div id="root">
+  <ul>
+    <li v-for="name in names" v-text="name"></li>
+  </ul>
+
+  <input type="text" id="input">
+  <button id="button">add name</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+  var app = new Vue ({
+    el: '#root',
+    data: {
+      names:['joe', 'mary', 'jane', 'jack']
+    },
+
+    mounted(){ //запускается вью однократно, когда все все хозяйство монтируется
+      document.querySelector('#button').addEventListener('click', () =>{
+        let name = document.querySelector('#input');
+        app.names.push(name.value);
+        name.value = '';
+      });
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
