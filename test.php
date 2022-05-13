@@ -13,57 +13,47 @@
  </head>
  <body>
 <p></p>
+
+
 <?php
+class P{
 
-// $path = 'C:\server\fin.local\app\webroot\files';
-// $directory = new \RecursiveDirectoryIterator($path);
-// $iterator = new \RecursiveIteratorIterator($directory);
-// $files = array();
-// $bad = 0;
-// $ok = 0;
-// $arFiles = [];
-// foreach ($iterator as $info) {
-//     if ($info->getFilename() == '.' || $info->getFilename() == '..'){
-//         continue;
-//     }
-    // echo $info->getFilename(). '<br />' . "\n"; // Получает имя файла
-    // echo $info->getPathname(). '<br />' . "\n"; // Получает путь к файлу
-     // echo $info->getPath(). '<br />' . "\n"; // получаем путь без имени файла
-    // echo $info->getDirName(). ' <br />';
-     // $parentPath = dirname($info->getPathname(),1);
-     // $grandParentPath = dirname($info->getPathname(),2);
-     // $parentDir =  str_replace($grandParentPath . '\\', '', $parentPath);
-     // $arFiles[] = [
-     //    'path' => $info->getPath(),
-     //    'parentDir' => $parentDir,
-     //    'filename' => $info->getFilename(),
-     //    'pathname' => $info->getPathname()
-     // ];
-
-     // echo $parentDir;
-     // echo  '<br />' . "\n";
-
-// }
-// echo count($arFiles);
-
-$arr  = ['100', '100', '1хуй','100.1'];
-$sum = 0;
-foreach($arr as $value){
-    $sum += (int)$value;
 }
-echo $sum;
-?>
-<pre>
-
-    <?php //var_dump($arFiles);
-    echo memory_get_usage()."<br />";// var_dump($arFiles); ?>
-</pre>
 
 
-<?php
-echo 'zalupa<br>';
-$link = '0фыва';
-var_dump((int) $link != 0);
+/*
+self:: всегда указывает на тот класс, в котором оно объявлено
+parent:: указывает на текущего родителя
+static:: на класс в котором он по факту будет вызван с учетом всех наследований
+*/
+
+class A extends P{
+  public static function getValSelf()
+  {
+    return new self();
+  }
+
+  public static function getValStatic()
+  {
+    return new static();
+  }
+
+  public static function getValParent()
+  {
+    return new parent();
+  }
+}
+
+Class B extends A {
+    public static function getValParent()
+  {
+    return new parent();
+  }
+}
+
+var_dump(get_class(B::getValSelf())); // 'A'
+var_dump(get_class(B::getValStatic())); // 'B'
+var_dump(get_class(B::getValParent())); // 'B'
 ?>
 
  </body>
