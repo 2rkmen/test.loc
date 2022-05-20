@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue title</title>
+
+</head>
+<body>
+
+<div id="root">
+  <h1>
+<!--    сюда можно запихнуть вычисляемые свойства из блока computed:
+  что любопытно - они там прописываются как методы. #почемутакнахуй
+-->
+    {{ reversedMessage }}
+  </h1>
+
+  <h2>all tasks</h2>
+  <ul>
+    <li v-for="task in tasks" >{{task.description+' is '+task.completed}}
+      <input
+              type="checkbox"
+              v-model="task.completed"
+      />
+    </li>
+  </ul>
+
+  <hr>
+  <h2>incomplete tasks</h2>
+  <ul>
+    <li v-for="task in incompleteTasks" v-text="task.description"></li>
+  </ul>
+
+  <hr>
+  <h2>complete tasks</h2>
+  <ul>
+    <li v-for="task in completeTasks" v-text="task.description"></li>
+  </ul>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+  var app = new Vue ({
+    el: '#root',
+    data: {
+      message: 'Hello World нахуй',
+      tasks: [
+        { description: 'Go to the store', completed: true},
+        { description: 'finish bullshit', completed: false},
+        { description: 'make shit', completed: false},
+        { description: 'clear inbox', completed: false},
+        { description: 'make dinner', completed: false},
+        { description: 'clean room', completed: true},
+
+      ]
+    },
+
+    methods:{
+
+    },
+
+    computed:{
+      reversedMessage() {
+        return this.message.split('').reverse().join('');
+      },
+      incompleteTasks(){
+        return this.tasks.filter(task => ! task.completed); //это синтаксис es6
+      },
+      completeTasks(){
+        return this.tasks.filter(task => task.completed); //это синтаксис es6
+      },
+    }
+  });
+
+</script>
+
+</body>
+</html>

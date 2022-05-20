@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue title</title>
+
+  <style>
+    .color-red {color:red;}
+    .color-blue {color:blue;}
+    .is-loading {background:red;}
+  </style>
+</head>
+<body>
+
+<div id="root">
+<!-- биндим в атрибут title значение переменной title: 'теперь тайтл задан через яваскрипт' -->
+<!--  <button v-on:click="blabla" v-bind:title="title">Hover over me</button>-->
+<!--  сокращенное то-же самое-->
+  <button @click="blabla" :title="title">Hover over me</button>
+
+  <h1 :class="className">this is h1 tag</h1>
+
+  <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Click me</button>
+
+  <button :disabled="isDisabled" @click="disableButton">disable-enable</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+  var app = new Vue ({
+    el: '#root',
+    data: {
+      className: 'color-red',
+      title: 'теперь тайтл задан через яваскрипт',
+      isLoading: false,
+      isDisabled: false
+    },
+
+    methods:{
+      disableButton(){
+        this.isDisabled = true;
+      },
+      toggleClass(){
+        this.isLoading = true;
+        this.isDisabled = false;
+
+      },
+      blabla(){
+        console.log('blabla');
+      }
+    },
+  });
+
+</script>
+
+</body>
+</html>
