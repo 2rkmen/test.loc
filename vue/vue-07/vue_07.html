@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue title</title>
+
+</head>
+<body>
+
+<div id="root">
+
+  <task>go to work</task>
+  <task>go to home</task>
+  <task>go to bank</task>
+  <br>
+  <my-component></my-component>
+
+  <my-component name="Коля"></my-component>
+  <my-component name="Вася"></my-component>
+  <my-component name="Петя"></my-component>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script src="main.js"></script>
+<script src="test-component.js"></script>
+
+<script>
+  new Vue({
+    el: '#root'
+  })
+</script>
+
+
+</body>
+</html>
