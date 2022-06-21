@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""/>
+    <style>
+        #map { height: 350px; }
+    </style>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
+</head>
+<body>
+<div id="map"></div>
+<script type="text/javascript">
+    var map = L.map('map').setView([51.297974, 37.833231], 6);
+    var markers = L.layerGroup().addTo(map);
+    var theMarker = L.layerGroup().addTo(map);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="/redirect.php?url=aHR0cHM6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcvY29weXJpZ2h0">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    map.on('click',function(e){
+        markers.clearLayers();
+        lat = e.latlng.lat;
+        lon = e.latlng.lng;
+        if (theMarker != undefined) {
+            map.removeLayer(theMarker);
+        };
+        theMarker = L.marker([lat,lon]).addTo(map);
+    })
+
+    function addPlaces(place,latitude,longitude){
+        markers.clearLayers();
+        map.setView([latitude, longitude], 40);
+        L.marker([latitude, longitude]).addTo(markers);
+    };
+
+    //Очищаем карту
+    function refreshMap(){
+        markers.clearLayers();
+        if (theMarker != undefined) {
+            map.removeLayer(theMarker);
+        };
+    }
+</script>
+</body>
+</html>
